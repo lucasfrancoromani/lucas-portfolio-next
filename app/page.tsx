@@ -202,8 +202,8 @@ export default function PortfolioLucasRomani() {
     </main>
   );
 }
-
-function SectionTitle({ title, subtitle }) {
+type TitleProps = { title: string; subtitle: string };
+function SectionTitle({ title, subtitle }: TitleProps) {
   return (
     <div className="flex items-end justify-between gap-4">
       <div>
@@ -215,7 +215,7 @@ function SectionTitle({ title, subtitle }) {
   );
 }
 
-function GradientCard({ title, subtitle }) {
+function GradientCard({ title, subtitle }: TitleProps) {
   return (
     <div className="rounded-2xl p-4 ring-1 ring-white/10 bg-gradient-to-br from-sky-500/10 via-teal-400/10 to-sky-500/10 min-h-[92px]">
       <div className="text-sm text-slate-300/90">{subtitle}</div>
