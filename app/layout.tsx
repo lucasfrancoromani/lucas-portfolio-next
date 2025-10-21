@@ -12,16 +12,15 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Lucas Franco Romani – Portfolio',
-  description: 'Full-Stack & Mobile (React, React Native, Supabase, Stripe). Proyectos: Bienestar App, Consulado Boca Juniors Roma.',
+  description: 'Full-Stack & Mobile (React, React Native, Supabase, Stripe).',
   openGraph: {
     title: 'Lucas Franco Romani – Portfolio',
     description: 'Full-Stack & Mobile',
-    images: ['/images/Captura_Consulado1.png'],
+    images: ['../images/Captura_Consulado1.png'],
     type: 'website',
   },
-  metadataBase: new URL('https://tudominio.com'), // luego lo cambiás si usás dominio
   themeColor: '#0ea5e9',
 };
 

@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 export default function PortfolioLucasRomani() {
   const projects = [
     {
@@ -11,7 +13,8 @@ export default function PortfolioLucasRomani() {
       demo: "",
       imageAlt: "Capturas del sitio Consulado Boca Juniors Roma",
       images: [
-        "images/Captura_Consulado1.png",
+        "/images/Captura_Consulado1.png",
+        "/images/Captura_Consulado2.png",
       ],
     },
     {
@@ -29,8 +32,8 @@ export default function PortfolioLucasRomani() {
 
   const skills = [
     { group: "Frontend", items: ["HTML", "CSS", "JavaScript", "React", "React Native", "Tailwind"] },
-    { group: "Backend / DB", items: ["Supabase (Postgres / RLS)", "SQL", "APIs REST", "Java", "C#", "Python"] },
-    { group: "Dev & Tools", items: ["Git / GitHub", "Stripe Connect", "Figma / Canva", "DaVinci Resolve", "Adobe Photoshop"] },
+    { group: "Backend / DB", items: ["Supabase (Postgres / RLS)", "SQL", "APIs REST"] },
+    { group: "Dev & Tools", items: ["Git / GitHub", "Stripe Connect", "Figma / Canva", "DaVinci Resolve"] },
   ];
 
   const links = {
@@ -96,9 +99,9 @@ export default function PortfolioLucasRomani() {
         <div className="mt-8 grid sm:grid-cols-2 gap-6">
           {projects.map((p, i) => (
             <article key={i} className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.04] transition">
-              <div className="aspect-[16/9] w-full bg-gradient-to-br from-sky-500/20 via-teal-400/10 to-sky-500/20 overflow-hidden" role="img" aria-label={p.imageAlt}>
+              <div className="relative aspect-[16/9] w-full bg-gradient-to-br from-sky-500/20 via-teal-400/10 to-sky-500/20 overflow-hidden" role="img" aria-label={p.imageAlt}>
                 {p.images && (
-                  <img src={p.images[0]} alt={p.imageAlt} className="object-cover w-full h-full" />
+                  <Image src={p.images[0]} alt={p.imageAlt} fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover" />
                 )}
               </div>
               <div className="p-5">
@@ -150,7 +153,7 @@ export default function PortfolioLucasRomani() {
               Trabajo con React/React Native, Supabase y Stripe. Me gusta construir MVPs funcionales rápido y mejorar en ciclos cortos.
             </p>
             <p className="mt-4">
-              También creo contenido ("Crónicas de un Viaje") y disfruto del diseño simple, la edición de video y la escritura.
+              También creo contenido «Crónicas de un Viaje» y disfruto del diseño simple, la edición de video y la escritura.
             </p>
           </div>
           <div className="rounded-3xl border border-white/10 bg-white/[0.02] p-6">
@@ -196,7 +199,7 @@ export default function PortfolioLucasRomani() {
           </div>
         </div>
         <footer className="mt-10 py-8 text-center text-slate-400 text-sm">
-          © {new Date().getFullYear()} Lucas Romani · Hecho con React + Tailwind
+          © {new Date().getFullYear()} Lucas Franco Romani · Hecho con React + Tailwind
         </footer>
       </section>
     </main>
@@ -215,7 +218,7 @@ function SectionTitle({ title, subtitle }: TitleProps) {
   );
 }
 
-function GradientCard({ title, subtitle }: TitleProps) {
+function GradientCard({ title, subtitle  }: TitleProps) {
   return (
     <div className="rounded-2xl p-4 ring-1 ring-white/10 bg-gradient-to-br from-sky-500/10 via-teal-400/10 to-sky-500/10 min-h-[92px]">
       <div className="text-sm text-slate-300/90">{subtitle}</div>
