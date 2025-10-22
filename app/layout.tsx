@@ -3,17 +3,14 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-// Fuente (dejas igual si ya usabas Geist)
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
 
-// Cambia esto en Vercel → Environment Variables
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://lucas-portfolio-next.vercel.app/";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
 
-  // SEO básico
   title: "Lucas Franco Romani — Portfolio",
   description:
     "Desarrollador Full-Stack & Mobile. React, React Native, Supabase y Stripe. MVPs claros, performance y buen UX.",
@@ -34,7 +31,6 @@ export const metadata: Metadata = {
   publisher: "Lucas Franco Romani",
   referrer: "origin-when-cross-origin",
 
-  // Robots (con fix: usar string para googleBot)
   robots: {
     index: true,
     follow: true,
@@ -42,13 +38,11 @@ export const metadata: Metadata = {
       "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
   },
 
-  // Canónica y alternates
   alternates: {
     canonical: `${SITE_URL}/`,
     languages: { es: `${SITE_URL}/` },
   },
 
-  // Open Graph
   openGraph: {
     type: "website",
     url: `${SITE_URL}/`,
@@ -59,7 +53,7 @@ export const metadata: Metadata = {
     locale: "es",
     images: [
       {
-        url: "/og/lucas-romani-og.png", // Poné esta imagen en /public/og/
+        url: "/og/lucas-romani-og.png",
         width: 1200,
         height: 630,
         alt: "Portfolio de Lucas Franco Romani",
@@ -67,7 +61,6 @@ export const metadata: Metadata = {
     ],
   },
 
-  // Twitter Cards
   twitter: {
     card: "summary_large_image",
     title: "Lucas Franco Romani — Portfolio",
@@ -76,7 +69,6 @@ export const metadata: Metadata = {
     images: ["/og/lucas-romani-og.png"],
   },
 
-  // Iconos / Manifest
   icons: {
     icon: [
       { url: "/favicon.ico" },
@@ -87,7 +79,6 @@ export const metadata: Metadata = {
   },
   manifest: "/site.webmanifest",
 
-  // Color de tema
   themeColor: [
     { media: "(prefers-color-scheme: light)", color: "#0ea5e9" },
     { media: "(prefers-color-scheme: dark)", color: "#0ea5e9" },
@@ -97,13 +88,12 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  // JSON-LD (Person)
   const personLd = {
     "@context": "https://schema.org",
     "@type": "Person",
     name: "Lucas Franco Romani",
     url: SITE_URL,
-    email: "mailto:dev@lucasromani.com", // ajusta si usás otro correo
+    email: "mailto:dev@lucasromani.com",
     jobTitle: "Desarrollador Full-Stack & Mobile",
     sameAs: [
       "https://github.com/lucasfrancoromani",
@@ -112,7 +102,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     ],
   };
 
-  // JSON-LD (WebSite)
   const websiteLd = {
     "@context": "https://schema.org",
     "@type": "WebSite",
