@@ -272,9 +272,12 @@ export default function PortfolioLucasRomani() {
               Soy desarrollador argentino viviendo en Italia. Me interesan los productos útiles y bien diseñados.
               Trabajo con React/React Native, Supabase y Stripe. Me gusta construir MVPs funcionales rápido y mejorar en ciclos cortos.
             </p>
-            <p className="mt-4">
-              También creo contenido como videoblogs ("Crónicas de un Viaje") y disfruto del diseño simple, la edición de video y la escritura.
-            </p>
+           <p className="mt-4">
+  También creo contenido como videoblogs ("Crónicas de un Viaje") y disfruto del diseño simple, la edición de video y la escritura.
+  Actualmente participo en un proyecto privado de desarrollo de un videojuego en <strong>Unity</strong> utilizando <strong>C#</strong>, 
+  enfocado en explorar nuevas mecánicas y mejorar mis habilidades en programación de videojuegos.
+</p>
+
           </div>
           <div className="rounded-3xl border border-white/10 bg-white/[0.02] p-6">
             <ul className="space-y-3 text-slate-300/90">
