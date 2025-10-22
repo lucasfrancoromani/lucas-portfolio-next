@@ -1,13 +1,25 @@
 // app/layout.tsx
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://lucas-portfolio-next.vercel.app/";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://lucas-portfolio-next.vercel.app";
 
+/** ✅ Nuevo: viewport (aca va themeColor) */
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#0ea5e9" },
+    { media: "(prefers-color-scheme: dark)", color: "#0ea5e9" },
+  ],
+  colorScheme: "dark light",
+  width: "device-width",
+  initialScale: 1,
+};
+
+/** ✅ metadata sin themeColor */
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
 
@@ -79,15 +91,11 @@ export const metadata: Metadata = {
   },
   manifest: "/site.webmanifest",
 
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#0ea5e9" },
-    { media: "(prefers-color-scheme: dark)", color: "#0ea5e9" },
-  ],
-
   category: "technology",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  // JSON-LD (Person)
   const personLd = {
     "@context": "https://schema.org",
     "@type": "Person",
@@ -102,6 +110,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     ],
   };
 
+  // JSON-LD (WebSite)
   const websiteLd = {
     "@context": "https://schema.org",
     "@type": "WebSite",
