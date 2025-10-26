@@ -290,7 +290,7 @@ export default function PortfolioLucasRomani() {
         </div>
       </section>
 
-      {/* SKILLS */}
+      {/* SKILLS / habilidades */}
       <section id="skills" className="scroll-mt-24 mx-auto max-w-6xl px-4 py-12 md:py-16">
         <SectionTitle title="Skills" subtitle="Tecnologías y herramientas" />
         <div className="mt-6 grid md:grid-cols-3 gap-6">
