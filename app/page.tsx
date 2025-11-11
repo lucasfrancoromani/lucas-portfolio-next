@@ -145,9 +145,7 @@ export default function PortfolioLucasRomani() {
             Lucas Franco Romani<span className="text-sky-400"> · Portfolio</span>
           </a>
           <div className="flex items-center gap-3 text-sm">
-            <a href="#proyectos" className="hover:text-sky-300 focus:outline-none focus:ring-2 focus:ring-sky-400/60 rounded-md px-1">
-              Proyectos
-            </a>
+            <a href="/proyectos" className="hover:text-sky-300">Proyectos</a>
             <a href="#sobre-mi" className="hover:text-sky-300 focus:outline-none focus:ring-2 focus:ring-sky-400/60 rounded-md px-1">
               Sobre mí
             </a>
