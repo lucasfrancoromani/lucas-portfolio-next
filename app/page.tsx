@@ -351,16 +351,16 @@ export default function PortfolioLucasRomani() {
   <div className="mt-10 grid md:grid-cols-2 gap-10 items-start">
     {/* FOTO GRANDE */}
     <div className="relative">
-      <div className="rounded-3xl overflow-hidden ring-1 ring-white/10 bg-white/[0.02]">
-        <Image
-          src="/images/lucas-about.jpg"
-          alt="Lucas Franco Romani en Venecia"
-          width={900}
-          height={1200}
-          className="w-full h-auto object-cover"
-          priority
-        />
-      </div>
+      <div className="relative w-full max-w-[640px] aspect-[3.5/5] overflow-hidden rounded-2xl ring-1 ring-white/10">
+  <Image
+    src="/images/lucas-about.jpg"
+    alt="Lucas Romani en Venecia"
+    fill
+    className="object-cover object-center"
+    sizes="1024px"
+  />
+</div>
+
     </div>
 
     {/* TEXTO */}
