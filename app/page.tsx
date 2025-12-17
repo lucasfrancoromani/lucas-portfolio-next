@@ -42,7 +42,7 @@ export default function PortfolioLucasRomani() {
       tags: ["Mobile", "Full-Stack"],
       repo: "https://github.com/lucasfrancoromani/bienestar-mvp",
       imageAlt: "Pantallas de la app Bienestar",
-      images: ["/images/bienestar-1.png"], // captura temporal
+      images: ["/images/captura-bienestar.png"], // captura temporal
       category: "mobile",
     },
     {
@@ -54,7 +54,7 @@ export default function PortfolioLucasRomani() {
       tags: ["Web", "Marketing", "Landing"],
       repo: "https://github.com/lucasfrancoromani/zeroprocrastinacion-web",
       imageAlt: "Hero de ZeroProcrastinación",
-      images: ["/images/zero-hero.png"], // captura temporal
+      images: ["/images/captura-zero.png"], // captura temporal
       category: "web",
     },
     {
@@ -66,7 +66,7 @@ export default function PortfolioLucasRomani() {
       tags: ["Web", "SEO", "Contacto"],
       repo: "https://github.com/lucasfrancoromani/portfolio-laura",
       imageAlt: "Mock del portfolio de Laura",
-      images: ["/images/portfolio-lau-1.png"], // captura temporal
+      images: ["/images/captura-laura.png"], // captura temporal
       category: "web",
     },
   ];
@@ -141,7 +141,10 @@ export default function PortfolioLucasRomani() {
       {/* NAV */}
       <header className="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-slate-900/40 border-b border-white/10">
         <nav className="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between" aria-label="Principal">
-          <a href="#top" className="font-semibold tracking-wide text-slate-100 focus:outline-none focus:ring-2 focus:ring-sky-400/60 rounded-md">
+          <a
+            href="#top"
+            className="font-semibold tracking-wide text-slate-100 focus:outline-none focus:ring-2 focus:ring-sky-400/60 rounded-md"
+          >
             Lucas Franco Romani<span className="text-sky-400"> · Portfolio</span>
           </a>
           <div className="flex items-center gap-3 text-sm">
@@ -171,29 +174,73 @@ export default function PortfolioLucasRomani() {
               Construyo experiencias{" "}
               <span className="bg-gradient-to-r from-sky-400 to-teal-300 bg-clip-text text-transparent">claras y útiles</span>
             </h1>
+
+            {/* MIDAS badge (temporal) */}
+            <div className="mt-4 flex flex-wrap items-center gap-2">
+              <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-3 py-1 text-xs text-slate-200/90">
+                <Image
+                  src="/images/logo-header.svg"
+                  alt="MIDAS Consultores"
+                  width={50}
+                  height={50}
+                  className="object-contain"
+                />
+                MIDAS CONSULTORES
+                <span className="text-slate-300/70">· actual</span>
+              </span>
+            </div>
+
             <p className="mt-5 text-slate-300/90 text-lg">
               Web y mobile con React/Next.js y React Native. Me enfoco en MVPs funcionales, rendimiento y una UX simple.
             </p>
+
             <div className="mt-6 flex flex-wrap gap-3">
-              <ButtonLink href="#proyectos" variant="primary">Ver proyectos</ButtonLink>
-              <ButtonLink href="https://github.com/lucasfrancoromani" external>GitHub</ButtonLink>
+              <ButtonLink href="/proyectos" variant="primary">Ver proyectos</ButtonLink>
+              <ButtonLink href={links.github} external>GitHub</ButtonLink>
             </div>
+
             <ul className="mt-6 flex flex-wrap gap-2 text-xs text-slate-300/80">
               {["Next.js", "React Native", "Supabase", "Stripe Connect", "Tailwind"].map((b) => (
                 <li key={b} className="rounded-full border border-white/10 px-3 py-1">{b}</li>
               ))}
             </ul>
           </div>
+
+          {/* FOTO + TARJETA */}
           <div className="relative">
-            <div className="aspect-[4/3] w-full rounded-3xl bg-gradient-to-tr from-sky-500/20 via-teal-500/10 to-sky-500/20 ring-1 ring-white/10 p-1">
-              <div className="h-full w-full rounded-2xl bg-slate-950/60 backdrop-blur flex items-center justify-center">
-                <div className="grid grid-cols-3 gap-3 p-6 w-full">
+            <div className="rounded-3xl bg-gradient-to-tr from-sky-500/20 via-teal-500/10 to-sky-500/20 ring-1 ring-white/10 p-1">
+              <div className="rounded-2xl bg-slate-950/60 backdrop-blur p-6">
+                <div className="flex items-center gap-4">
+                  <div className="relative size-32 md:size-40 overflow-hidden rounded-3xl ring-1 ring-white/10">
+                  <Image
+                    src="/images/IMG_7426.jpg"
+                    alt="Foto de Lucas Franco Romani"
+                    width={320}
+                    height={320}
+                    className="h-full w-full object-cover"
+                    priority
+                  />
+                </div>
+                  <div>
+                    <div className="text-lg font-semibold">Lucas Franco Romani</div>
+                    <div className="text-sm text-slate-300/90">Full-Stack · Mobile · UI</div>
+                    <div className="mt-2 flex flex-wrap gap-2">
+                      <span className="inline-flex items-center gap-2 rounded-full border border-white/10 px-3 py-1 text-xs text-slate-200/90">
+                        <BriefcaseIcon className="size-4 opacity-90" />
+                        MIDAS CONSULTORES
+                      </span>
+                      <span className="inline-flex items-center gap-2 rounded-full border border-white/10 px-3 py-1 text-xs text-slate-200/90">
+                        <LocationIcon className="size-4 opacity-90" />
+                        Argentina
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="mt-6 grid grid-cols-3 gap-3">
                   <GradientCard title="React Native" subtitle="Expo" />
-                  <GradientCard title="Supabase" subtitle="Auth · RLS · SQL" />
+                  <GradientCard title="Supabase" subtitle="Auth · RLS" />
                   <GradientCard title="Stripe" subtitle="Connect" />
-                  <GradientCard title="Next.js" subtitle="SSR · SSG" />
-                  <GradientCard title="Tailwind" subtitle="UI" />
-                  <GradientCard title="GitHub" subtitle="Flujo Git" />
                 </div>
               </div>
             </div>
@@ -261,16 +308,12 @@ export default function PortfolioLucasRomani() {
                 </div>
                 <p className="mt-2 text-slate-300/90">{p.blurb}</p>
 
-                {/* Chips stack */}
                 <ul className="mt-3 flex flex-wrap gap-2 text-xs text-slate-300/80">
                   {p.stack.map((s, idx) => (
-                    <li key={idx} className="rounded-full border border-white/10 px-2 py-0.5">
-                      {s}
-                    </li>
+                    <li key={idx} className="rounded-full border border-white/10 px-2 py-0.5">{s}</li>
                   ))}
                 </ul>
 
-                {/* Thumbs (si hay varias imágenes) */}
                 {p.images.length > 1 && (
                   <div className="mt-4 flex gap-2">
                     {p.images.slice(0, 6).map((src, idx) => (
@@ -289,14 +332,10 @@ export default function PortfolioLucasRomani() {
 
                 <div className="mt-4 flex items-center gap-3">
                   {p.repo && (
-                    <ButtonLink href={p.repo} external size="sm" variant="ghost">
-                      Código
-                    </ButtonLink>
+                    <ButtonLink href={p.repo} external size="sm" variant="ghost">Código</ButtonLink>
                   )}
                   {p.demo && (
-                    <ButtonLink href={p.demo} external size="sm" variant="primary-strong">
-                      Demo
-                    </ButtonLink>
+                    <ButtonLink href={p.demo} external size="sm" variant="primary-strong">Demo</ButtonLink>
                   )}
                 </div>
               </div>
@@ -306,28 +345,82 @@ export default function PortfolioLucasRomani() {
       </section>
 
       {/* SOBRE MI */}
-      <section id="sobre-mi" className="scroll-mt-24 mx-auto max-w-6xl px-4 py-12 md:py-16">
-        <SectionTitle title="Sobre mí" subtitle="Perfil y enfoque" />
-        <div className="mt-6 grid md:grid-cols-2 gap-6">
-          <div className="rounded-3xl border border-white/10 bg-white/[0.02] p-6 leading-relaxed text-slate-300/90">
-            <p>
-              Soy desarrollador argentino viviendo en Italia. Me interesan los productos útiles y bien diseñados. Trabajo con React/Next.js y React Native.
-              Construyo MVPs funcionales rápido y mejoro en ciclos cortos.
-            </p>
-            <p className="mt-4">
-              También creo contenido («Crónicas de un Viaje») y disfruto del diseño simple, la edición de video y la escritura. Actualmente exploro desarrollo de videojuegos con <strong>Unity (C#)</strong>.
-            </p>
+<section id="sobre-mi" className="scroll-mt-24 mx-auto max-w-6xl px-4 py-12 md:py-20">
+  <SectionTitle title="Sobre mí" subtitle="Perfil, enfoque y experiencia" />
+
+  <div className="mt-10 grid md:grid-cols-2 gap-10 items-start">
+    {/* FOTO GRANDE */}
+    <div className="relative">
+      <div className="rounded-3xl overflow-hidden ring-1 ring-white/10 bg-white/[0.02]">
+        <Image
+          src="/images/lucas-about.jpg"
+          alt="Lucas Franco Romani en Venecia"
+          width={900}
+          height={1200}
+          className="w-full h-auto object-cover"
+          priority
+        />
+      </div>
+    </div>
+
+    {/* TEXTO */}
+    <div className="space-y-6">
+      <div className="rounded-3xl border border-white/10 bg-white/[0.02] p-6 text-slate-300/90 leading-relaxed">
+        <p>
+          Soy desarrollador argentino viviendo en Italia. Me enfoco en crear productos digitales
+          claros, funcionales y bien diseñados, priorizando la experiencia de usuario y el
+          rendimiento.
+        </p>
+
+        <p className="mt-4">
+          Trabajo principalmente con <strong>React, Next.js y React Native</strong>, desarrollando
+          MVPs que validan ideas rápido y escalan de forma ordenada. Me siento cómodo
+          moviéndome entre frontend, lógica de negocio y base de datos.
+        </p>
+
+        <p className="mt-4">
+          Además, creo contenido en <em>Crónicas de un Viaje</em> y tengo un fuerte interés por
+          el diseño, la edición de video y el desarrollo de videojuegos con <strong>Unity (C#)</strong>.
+        </p>
+      </div>
+
+      {/* EXPERIENCIA MIDAS (temporal) */}
+      <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-5">
+        <div className="flex items-start gap-4">
+          <div className="inline-flex items-center rounded-xl bg-white/90 px-4 py-2">
+            <Image
+              src="/images/logo-header.png"
+              alt="MIDAS Consultores"
+              width={120}
+              height={48}
+              className="object-contain"
+            />
           </div>
-          <div className="rounded-3xl border border-white/10 bg-white/[0.02] p-6">
-            <ul className="space-y-3 text-slate-300/90">
-              <li className="flex items-start gap-3"><Dot /> <span>UX clara, estados y flujos coherentes.</span></li>
-              <li className="flex items-start gap-3"><Dot /> <span>Buenas prácticas: Git Flow simple, RLS en DB, manejo de errores y logs.</span></li>
-              <li className="flex items-start gap-3"><Dot /> <span>MVPs con Stripe Connect, reservas y perfiles profesionales.</span></li>
-              <li className="flex items-start gap-3"><Dot /> <span>Aprendizaje continuo (React, SQL, Unity, edición).</span></li>
-            </ul>
+
+          <div>
+            <div className="flex items-center gap-2">
+              <h4 className="font-semibold text-slate-100">MIDAS CONSULTORES</h4>
+              <span className="text-xs border border-white/10 rounded-full px-2 py-0.5 text-slate-300/80">
+                Actual
+              </span>
+            </div>
+            <p className="mt-1 text-sm text-slate-300/90">
+              Desarrollo y soporte de soluciones internas y proyectos web.
+            </p>
           </div>
         </div>
-      </section>
+      </div>
+
+      {/* LISTA */}
+      <ul className="space-y-3 text-slate-300/90">
+        <li className="flex items-start gap-3"><Dot /> UX clara y flujos coherentes.</li>
+        <li className="flex items-start gap-3"><Dot /> Buenas prácticas: Git, RLS, manejo de errores.</li>
+        <li className="flex items-start gap-3"><Dot /> MVPs con Stripe Connect y Supabase.</li>
+        <li className="flex items-start gap-3"><Dot /> Aprendizaje continuo y enfoque práctico.</li>
+      </ul>
+    </div>
+  </div>
+</section>
 
       {/* SKILLS */}
       <section id="skills" className="scroll-mt-24 mx-auto max-w-6xl px-4 py-12 md:py-16">
@@ -338,9 +431,7 @@ export default function PortfolioLucasRomani() {
               <h4 className="font-semibold text-slate-100">{s.group}</h4>
               <ul className="mt-3 space-y-1 text-slate-300/90">
                 {s.items.map((it, j) => (
-                  <li key={j} className="flex items-center gap-2">
-                    <SmallDot /> {it}
-                  </li>
+                  <li key={j} className="flex items-center gap-2"><SmallDot /> {it}</li>
                 ))}
               </ul>
             </div>
@@ -390,6 +481,7 @@ type ButtonLinkProps = {
   size?: "sm" | "md";
   external?: boolean;
 };
+
 function ButtonLink({ href, children, variant = "ghost", size = "md", external = false }: ButtonLinkProps) {
   const base = "inline-flex items-center rounded-2xl transition focus:outline-none focus:ring-2 focus:ring-sky-400/60";
   const sizes = size === "sm" ? "px-3 py-1.5 text-sm" : "px-5 py-2.5";
@@ -439,6 +531,56 @@ function SmallDot() {
   return <span aria-hidden className="inline-block size-1.5 rounded-full bg-slate-300/70" />;
 }
 
+/** ===== Iconos inline (sin librerías) ===== */
+function BuildingIcon({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden>
+      <path
+        d="M4 20V4.8c0-.44.36-.8.8-.8H14c.44 0 .8.36.8.8V20"
+        stroke="currentColor"
+        strokeWidth="1.6"
+        strokeLinecap="round"
+      />
+      <path d="M8 8h2M8 12h2M8 16h2M13 8h1M13 12h1M13 16h1" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+      <path d="M18 20v-9.2c0-.44.36-.8.8-.8H20" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+function BriefcaseIcon({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden>
+      <path
+        d="M9 7V6.2c0-.66.54-1.2 1.2-1.2h3.6c.66 0 1.2.54 1.2 1.2V7"
+        stroke="currentColor"
+        strokeWidth="1.6"
+        strokeLinecap="round"
+      />
+      <path
+        d="M5 8.6c0-.88.72-1.6 1.6-1.6h10.8c.88 0 1.6.72 1.6 1.6V19c0 .88-.72 1.6-1.6 1.6H6.6C5.72 20.6 5 19.88 5 19V8.6Z"
+        stroke="currentColor"
+        strokeWidth="1.6"
+        strokeLinejoin="round"
+      />
+      <path d="M9 12h6" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+function LocationIcon({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden>
+      <path
+        d="M12 21s7-5.3 7-11a7 7 0 1 0-14 0c0 5.7 7 11 7 11Z"
+        stroke="currentColor"
+        strokeWidth="1.6"
+        strokeLinejoin="round"
+      />
+      <path d="M12 11.2a2.2 2.2 0 1 0 0-4.4 2.2 2.2 0 0 0 0 4.4Z" stroke="currentColor" strokeWidth="1.6" />
+    </svg>
+  );
+}
+
 /** ===== Lightbox ===== */
 /* eslint-disable @next/next/no-img-element */
 type LightboxProps = {
@@ -451,6 +593,7 @@ type LightboxProps = {
   onNext: () => void;
   setIndex: (i: number) => void;
 };
+
 function Lightbox({ open, images, alt, index, onClose, onPrev, onNext, setIndex }: LightboxProps) {
   const hasImages = images && images.length > 0;
   const current = useMemo(() => (hasImages ? images[index] : ""), [images, index, hasImages]);
@@ -460,7 +603,6 @@ function Lightbox({ open, images, alt, index, onClose, onPrev, onNext, setIndex 
     if (e.target === backdropRef.current) onClose();
   };
 
-  // Swipe en mobile
   const startX = useRef<number | null>(null);
   const onTouchStart = (e: React.TouchEvent) => {
     startX.current = e.touches[0].clientX;
@@ -485,7 +627,6 @@ function Lightbox({ open, images, alt, index, onClose, onPrev, onNext, setIndex 
       role="dialog"
       aria-label="Visor de imágenes de proyecto"
     >
-      {/* Top bar */}
       <div className="flex items-center justify-between px-4 py-2 text-slate-200">
         <div className="text-sm opacity-80">{alt}</div>
         <button
@@ -497,7 +638,6 @@ function Lightbox({ open, images, alt, index, onClose, onPrev, onNext, setIndex 
         </button>
       </div>
 
-      {/* Imagen principal */}
       <div className="relative grow flex items-center justify-center px-3" onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
         {images.length > 1 && (
           <button
@@ -522,7 +662,6 @@ function Lightbox({ open, images, alt, index, onClose, onPrev, onNext, setIndex 
         )}
       </div>
 
-      {/* Tiras de miniaturas */}
       {images.length > 1 && (
         <div className="px-3 pb-4">
           <div className="mx-auto max-w-5xl flex gap-2 overflow-x-auto">

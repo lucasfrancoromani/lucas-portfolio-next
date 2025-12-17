@@ -65,8 +65,8 @@ const projects: Project[] = [
       "Base para escalar con métricas y notificaciones.",
     ],
     repo: "https://github.com/lucasfrancoromani/bienestar-mvp",
-    cover: "/images/bienestar-1.png",
-    gallery: ["/images/bienestar-1.png"],
+    cover: "/images/captura-bienestar.png",
+    gallery: ["/images/captura-bienestar.png"],
     category: "mobile",
   },
   {
@@ -90,8 +90,8 @@ const projects: Project[] = [
       "Tiempos de build/deploy rápidos con Vercel.",
     ],
     repo: "https://github.com/lucasfrancoromani/zeroprocrastinacion-web",
-    cover: "/images/zero-hero.png",
-    gallery: ["/images/zero-hero.png"],
+    cover: "/images/captura-zero.png",
+    gallery: ["/images/captura-zero.png"],
     category: "web",
   },
   {
@@ -115,8 +115,8 @@ const projects: Project[] = [
       "Base para agregar blog/press-kit y métricas.",
     ],
     repo: "https://github.com/lucasfrancoromani/portfolio-laura",
-    cover: "/images/portfolio-lau-1.png",
-    gallery: ["/images/portfolio-lau-1.png"],
+    cover: "/images/captura-laura.png",
+    gallery: ["/images/captura-laura.png"],
     category: "web",
   },
 ];
