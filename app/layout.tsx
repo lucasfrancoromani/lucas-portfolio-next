@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     siteName: "Portfolio Lucas Romani",
     images: [
       {
-        url: "https://www.lucasromani.com/og/og-prueba.png",
+        url: "https://www.lucasromani.com/og/og-final.jpg",
         width: 1200,
         height: 630,
         alt: "Portfolio de Lucas Franco Romani",
