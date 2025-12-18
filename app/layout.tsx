@@ -6,9 +6,9 @@ import "./globals.css";
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://lucas-portfolio-next.vercel.app";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://lucasromani.com";
 
-/** ✅ Nuevo: viewport (aca va themeColor) */
+/** ✅ viewport (themeColor va acá) */
 export const viewport: Viewport = {
   themeColor: [
     { media: "(prefers-color-scheme: light)", color: "#0ea5e9" },
@@ -19,7 +19,7 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
-/** ✅ metadata sin themeColor */
+/** ✅ metadata */
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
 
@@ -51,21 +51,22 @@ export const metadata: Metadata = {
   },
 
   alternates: {
-    canonical: `${SITE_URL}/`,
+    canonical: SITE_URL,
     languages: { es: `${SITE_URL}/` },
   },
 
   openGraph: {
     type: "website",
-    url: `${SITE_URL}/`,
+    url: SITE_URL,
     title: "Lucas Franco Romani — Portfolio",
     siteName: "Portfolio Lucas Romani",
     description:
       "Full-Stack & Mobile (React, React Native, Supabase, Stripe). Proyectos, MVPs y contacto.",
-    locale: "es",
+    locale: "es_AR",
     images: [
       {
-        url: "/og/lucas-romani-og.png",
+        // ✅ Absoluta: ayuda a WhatsApp/FB scrapers
+        url: `${SITE_URL}/og/lucas-romani-og.png`,
         width: 1200,
         height: 630,
         alt: "Portfolio de Lucas Franco Romani",
@@ -78,7 +79,12 @@ export const metadata: Metadata = {
     title: "Lucas Franco Romani — Portfolio",
     description:
       "Full-Stack & Mobile. React, React Native, Supabase, Stripe. MVPs rápidos y claros.",
-    images: ["/og/lucas-romani-og.png"],
+    images: [
+      {
+        url: `${SITE_URL}/og/lucas-romani-og.png`,
+        alt: "Portfolio de Lucas Franco Romani",
+      },
+    ],
   },
 
   icons: {
@@ -87,10 +93,12 @@ export const metadata: Metadata = {
       { url: "/icon-32.png", sizes: "32x32", type: "image/png" },
       { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
     ],
-    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
+    apple: [
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
   },
-  manifest: "/site.webmanifest",
 
+  manifest: "/site.webmanifest",
   category: "technology",
 };
 
