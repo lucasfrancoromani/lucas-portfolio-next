@@ -21,7 +21,8 @@ export const viewport: Viewport = {
 
 /** ✅ metadata */
 export const metadata: Metadata = {
-  metadataBase: new URL(SITE_URL),
+metadataBase: new URL("https://www.lucasromani.com"),
+
 
   title: "Lucas Franco Romani — Portfolio",
   description:
@@ -57,7 +58,7 @@ export const metadata: Metadata = {
 
   openGraph: {
     type: "website",
-    url: SITE_URL,
+    url: "https://www.lucasromani.com",
     title: "Lucas Franco Romani — Portfolio",
     siteName: "Portfolio Lucas Romani",
     description:
@@ -66,7 +67,7 @@ export const metadata: Metadata = {
     images: [
       {
         // ✅ Absoluta: ayuda a WhatsApp/FB scrapers
-        url: `${SITE_URL}/og/lucas-romani-og.png`,
+        url: "https://www.lucasromani.com/og/lucas-romani-og.png",
         width: 1200,
         height: 630,
         alt: "Portfolio de Lucas Franco Romani",
