@@ -66,7 +66,7 @@ export const metadata: Metadata = {
     images: [
       {
         // ✅ Absoluta: ayuda a WhatsApp/FB scrapers
-        url: `${SITE_URL}/og/lucas-romani-og2.png`,
+        url: `${SITE_URL}/og/lucas-romani-og.png`,
         width: 1200,
         height: 630,
         alt: "Portfolio de Lucas Franco Romani",
