@@ -79,7 +79,7 @@ LinkedIn: https://www.linkedin.com/in/lucasfrancoromani/
 ## 📸 Preview
 
 
-![Preview](public/images/preview.jpg)
+![Preview](public/images/preview.png)
 
 ---
 
