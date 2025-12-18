@@ -78,13 +78,6 @@ export default function PortfolioLucasRomani() {
     return allProjects.filter((p) => p.category === filter);
   }, [filter, allProjects]);
 
-  /** Skills */
-  const skills = [
-    { group: "Frontend", items: ["HTML", "CSS", "JavaScript", "React", "React Native", "Tailwind"] },
-    { group: "Backend / DB", items: ["Supabase (Postgres / RLS)", "SQL", "APIs REST", "Java", "C#", "Python"] },
-    { group: "Dev & Tools", items: ["Git / GitHub", "Stripe Connect", "Figma / Canva", "DaVinci Resolve", "Adobe Photoshop"] },
-  ];
-
   /** Links */
   const links = {
     email: "mailto:dev@lucasromani.com",
@@ -172,7 +165,9 @@ export default function PortfolioLucasRomani() {
             <p className="text-sm uppercase tracking-[0.2em] text-sky-300/90">Desarrollador & Creador Digital</p>
             <h1 className="mt-3 text-4xl md:text-6xl font-extrabold leading-tight">
               Construyo experiencias{" "}
-              <span className="bg-gradient-to-r from-sky-400 to-teal-300 bg-clip-text text-transparent">claras y útiles</span>
+              <span className="bg-gradient-to-r from-sky-400 to-teal-300 bg-clip-text text-transparent">
+                claras y útiles
+              </span>
             </h1>
 
             {/* MIDAS badge (temporal) */}
@@ -212,15 +207,15 @@ export default function PortfolioLucasRomani() {
               <div className="rounded-2xl bg-slate-950/60 backdrop-blur p-6">
                 <div className="flex items-center gap-4">
                   <div className="relative size-32 md:size-40 overflow-hidden rounded-3xl ring-1 ring-white/10">
-                  <Image
-                    src="/images/IMG_7426.jpg"
-                    alt="Foto de Lucas Franco Romani"
-                    width={320}
-                    height={320}
-                    className="h-full w-full object-cover"
-                    priority
-                  />
-                </div>
+                    <Image
+                      src="/images/perfil2.jpg"
+                      alt="Foto de Lucas Franco Romani"
+                      width={320}
+                      height={320}
+                      className="h-full w-full object-cover"
+                      priority
+                    />
+                  </div>
                   <div>
                     <div className="text-lg font-semibold">Lucas Franco Romani</div>
                     <div className="text-sm text-slate-300/90">Full-Stack · Mobile · UI</div>
@@ -263,7 +258,9 @@ export default function PortfolioLucasRomani() {
               key={btn.k}
               onClick={() => setFilter(btn.k as "all" | "web" | "mobile")}
               className={`rounded-full border px-3 py-1.5 text-sm ${
-                filter === btn.k ? "bg-sky-500/90 text-slate-950 border-sky-500/50" : "border-white/15 hover:border-white/30"
+                filter === btn.k
+                  ? "bg-sky-500/90 text-slate-950 border-sky-500/50"
+                  : "border-white/15 hover:border-white/30"
               }`}
             >
               {btn.label}
@@ -304,13 +301,17 @@ export default function PortfolioLucasRomani() {
               <div className="p-5">
                 <div className="flex items-center justify-between">
                   <h3 className="text-xl font-semibold">{p.title}</h3>
-                  <span className="text-xs text-slate-300/70 border border-white/10 rounded-full px-2 py-0.5">{p.period}</span>
+                  <span className="text-xs text-slate-300/70 border border-white/10 rounded-full px-2 py-0.5">
+                    {p.period}
+                  </span>
                 </div>
                 <p className="mt-2 text-slate-300/90">{p.blurb}</p>
 
                 <ul className="mt-3 flex flex-wrap gap-2 text-xs text-slate-300/80">
                   {p.stack.map((s, idx) => (
-                    <li key={idx} className="rounded-full border border-white/10 px-2 py-0.5">{s}</li>
+                    <li key={idx} className="rounded-full border border-white/10 px-2 py-0.5">
+                      {s}
+                    </li>
                   ))}
                 </ul>
 
@@ -332,10 +333,14 @@ export default function PortfolioLucasRomani() {
 
                 <div className="mt-4 flex items-center gap-3">
                   {p.repo && (
-                    <ButtonLink href={p.repo} external size="sm" variant="ghost">Código</ButtonLink>
+                    <ButtonLink href={p.repo} external size="sm" variant="ghost">
+                      Código
+                    </ButtonLink>
                   )}
                   {p.demo && (
-                    <ButtonLink href={p.demo} external size="sm" variant="primary-strong">Demo</ButtonLink>
+                    <ButtonLink href={p.demo} external size="sm" variant="primary-strong">
+                      Demo
+                    </ButtonLink>
                   )}
                 </div>
               </div>
@@ -345,97 +350,126 @@ export default function PortfolioLucasRomani() {
       </section>
 
       {/* SOBRE MI */}
-<section id="sobre-mi" className="scroll-mt-24 mx-auto max-w-6xl px-4 py-12 md:py-20">
-  <SectionTitle title="Sobre mí" subtitle="Perfil, enfoque y experiencia" />
+      <section id="sobre-mi" className="scroll-mt-24 mx-auto max-w-6xl px-4 py-12 md:py-20">
+        <SectionTitle title="Sobre mí" subtitle="Perfil, enfoque y experiencia" />
 
-  <div className="mt-10 grid md:grid-cols-2 gap-10 items-start">
-    {/* FOTO GRANDE */}
-    <div className="relative">
-      <div className="relative w-full max-w-[640px] aspect-[3.5/5] overflow-hidden rounded-2xl ring-1 ring-white/10">
-  <Image
-    src="/images/lucas-about.jpg"
-    alt="Lucas Romani en Venecia"
-    fill
-    className="object-cover object-center"
-    sizes="1024px"
-  />
-</div>
-
-    </div>
-
-    {/* TEXTO */}
-    <div className="space-y-6">
-      <div className="rounded-3xl border border-white/10 bg-white/[0.02] p-6 text-slate-300/90 leading-relaxed">
-        <p>
-          Soy desarrollador argentino viviendo en Italia. Me enfoco en crear productos digitales
-          claros, funcionales y bien diseñados, priorizando la experiencia de usuario y el
-          rendimiento.
-        </p>
-
-        <p className="mt-4">
-          Trabajo principalmente con <strong>React, Next.js y React Native</strong>, desarrollando
-          MVPs que validan ideas rápido y escalan de forma ordenada. Me siento cómodo
-          moviéndome entre frontend, lógica de negocio y base de datos.
-        </p>
-
-        <p className="mt-4">
-          Además, creo contenido en <em>Crónicas de un Viaje</em> y tengo un fuerte interés por
-          el diseño, la edición de video y el desarrollo de videojuegos con <strong>Unity (C#)</strong>.
-        </p>
-      </div>
-
-      {/* EXPERIENCIA MIDAS (temporal) */}
-      <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-5">
-        <div className="flex items-start gap-4">
-          <div className="inline-flex items-center rounded-xl bg-white/90 px-4 py-2">
-            <Image
-              src="/images/logo-header.png"
-              alt="MIDAS Consultores"
-              width={120}
-              height={48}
-              className="object-contain"
-            />
+        <div className="mt-10 grid md:grid-cols-2 gap-10 items-start">
+          {/* FOTO GRANDE */}
+          <div className="relative">
+            <div className="relative w-full max-w-[640px] aspect-[3.5/5] overflow-hidden rounded-2xl ring-1 ring-white/10">
+              <Image
+                src="/images/lucas-about.jpg"
+                alt="Lucas Romani en Venecia"
+                fill
+                className="object-cover object-center"
+                sizes="1024px"
+              />
+            </div>
           </div>
 
-          <div>
-            <div className="flex items-center gap-2">
-              <h4 className="font-semibold text-slate-100">MIDAS CONSULTORES</h4>
-              <span className="text-xs border border-white/10 rounded-full px-2 py-0.5 text-slate-300/80">
-                Actual
-              </span>
+          {/* TEXTO */}
+          <div className="space-y-6">
+            <div className="rounded-3xl border border-white/10 bg-white/[0.02] p-6 text-slate-300/90 leading-relaxed">
+              <p>
+                Soy desarrollador argentino viviendo en Italia. Me enfoco en crear productos digitales claros,
+                funcionales y bien diseñados, priorizando la experiencia de usuario y el rendimiento.
+              </p>
+
+              <p className="mt-4">
+                Trabajo principalmente con <strong>React, Next.js y React Native</strong>, desarrollando MVPs que validan
+                ideas rápido y escalan de forma ordenada. Me siento cómodo moviéndome entre frontend, lógica de negocio
+                y base de datos.
+              </p>
+
+              <p className="mt-4">
+                Además, creo contenido en <em>Crónicas de un Viaje</em> y tengo un fuerte interés por el diseño, la
+                edición de video y el desarrollo de videojuegos con <strong>Unity (C#)</strong>.
+              </p>
             </div>
-            <p className="mt-1 text-sm text-slate-300/90">
-              Desarrollo y soporte de soluciones internas y proyectos web.
-            </p>
+
+            {/* EXPERIENCIA MIDAS (temporal) */}
+            <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-5">
+              <div className="flex items-start gap-4">
+                <div className="inline-flex items-center rounded-xl bg-white/90 px-4 py-2">
+                  <Image
+                    src="/images/logo-header.png"
+                    alt="MIDAS Consultores"
+                    width={120}
+                    height={48}
+                    className="object-contain"
+                  />
+                </div>
+
+                <div>
+                  <div className="flex items-center gap-2">
+                    <h4 className="font-semibold text-slate-100">MIDAS CONSULTORES</h4>
+                    <span className="text-xs border border-white/10 rounded-full px-2 py-0.5 text-slate-300/80">
+                      Actual
+                    </span>
+                  </div>
+                  <p className="mt-1 text-sm text-slate-300/90">
+                    Desarrollo y soporte de soluciones internas y proyectos web.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* LISTA */}
+            <ul className="space-y-3 text-slate-300/90">
+              <li className="flex items-start gap-3"><Dot /> UX clara y flujos coherentes.</li>
+              <li className="flex items-start gap-3"><Dot /> Buenas prácticas: Git, RLS, manejo de errores.</li>
+              <li className="flex items-start gap-3"><Dot /> MVPs con Stripe Connect y Supabase.</li>
+              <li className="flex items-start gap-3"><Dot /> Aprendizaje continuo y enfoque práctico.</li>
+            </ul>
           </div>
         </div>
-      </div>
-
-      {/* LISTA */}
-      <ul className="space-y-3 text-slate-300/90">
-        <li className="flex items-start gap-3"><Dot /> UX clara y flujos coherentes.</li>
-        <li className="flex items-start gap-3"><Dot /> Buenas prácticas: Git, RLS, manejo de errores.</li>
-        <li className="flex items-start gap-3"><Dot /> MVPs con Stripe Connect y Supabase.</li>
-        <li className="flex items-start gap-3"><Dot /> Aprendizaje continuo y enfoque práctico.</li>
-      </ul>
-    </div>
-  </div>
-</section>
+      </section>
 
       {/* SKILLS */}
       <section id="skills" className="scroll-mt-24 mx-auto max-w-6xl px-4 py-12 md:py-16">
-        <SectionTitle title="Skills" subtitle="Tecnologías y herramientas" />
-        <div className="mt-6 grid md:grid-cols-3 gap-6">
-          {skills.map((s, i) => (
-            <div key={i} className="rounded-3xl border border-white/10 bg-white/[0.02] p-6">
-              <h4 className="font-semibold text-slate-100">{s.group}</h4>
-              <ul className="mt-3 space-y-1 text-slate-300/90">
-                {s.items.map((it, j) => (
-                  <li key={j} className="flex items-center gap-2"><SmallDot /> {it}</li>
-                ))}
-              </ul>
-            </div>
-          ))}
+        <SectionTitle title="Skills" subtitle="Tecnologías y herramientas con las que trabajo" />
+
+        <div className="mt-8 grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <SkillChipGroup
+            title="Frontend"
+            items={[
+              { name: "HTML", icon: "html" },
+              { name: "CSS", icon: "css" },
+              { name: "JavaScript", icon: "js" },
+              { name: "React", icon: "react" },
+              { name: "Next.js", icon: "next" },
+              { name: "Tailwind CSS", icon: "tailwind" },
+              { name: "TypeScript", icon: "ts" },
+            ]}
+          />
+
+          <SkillChipGroup
+            title="Mobile"
+            items={[
+              { name: "React Native", icon: "react" },
+              { name: "Expo", icon: "expo" },
+            ]}
+          />
+
+          <SkillChipGroup
+            title="Backend / Data"
+            items={[
+              { name: "SQL", icon: "sql" },
+              { name: "APIs REST", icon: "api" },
+              { name: "Supabase", icon: "supabase" },
+              { name: "Java", icon: "java" },
+            ]}
+          />
+
+          <SkillChipGroup
+            title="Creativo / Tools"
+            items={[
+              { name: "Git / GitHub", icon: "github" },
+              { name: "Unity (C#)", icon: "unity" },
+              { name: "DaVinci Resolve", icon: "davinci" },
+              { name: "Adobe Photoshop", icon: "photoshop" },
+            ]}
+          />
         </div>
       </section>
 
@@ -527,26 +561,170 @@ function GradientCard({ title, subtitle }: GradientCardProps) {
 function Dot() {
   return <span aria-hidden className="mt-2 inline-block size-2 rounded-full bg-sky-400/80 shadow shadow-sky-500/30" />;
 }
-function SmallDot() {
-  return <span aria-hidden className="inline-block size-1.5 rounded-full bg-slate-300/70" />;
-}
 
-/** ===== Iconos inline (sin librerías) ===== */
-function BuildingIcon({ className }: { className?: string }) {
+/** ===== Iconos Skills ===== */
+type SkillIconKey =
+  | "react"
+  | "next"
+  | "tailwind"
+  | "supabase"
+  | "stripe"
+  | "github"
+  | "unity"
+  | "expo"
+  | "ts"
+  | "js"
+  | "html"
+  | "css"
+  | "sql"
+  | "api"
+  | "java"
+  | "davinci"
+  | "photoshop";
+
+type SkillChip = { name: string; icon: SkillIconKey };
+
+function SkillChipGroup({ title, items }: { title: string; items: SkillChip[] }) {
   return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden>
-      <path
-        d="M4 20V4.8c0-.44.36-.8.8-.8H14c.44 0 .8.36.8.8V20"
-        stroke="currentColor"
-        strokeWidth="1.6"
-        strokeLinecap="round"
-      />
-      <path d="M8 8h2M8 12h2M8 16h2M13 8h1M13 12h1M13 16h1" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
-      <path d="M18 20v-9.2c0-.44.36-.8.8-.8H20" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
-    </svg>
+    <div className="rounded-3xl border border-white/10 bg-white/[0.02] p-6">
+      <h4 className="font-semibold text-slate-100">{title}</h4>
+
+      <div className="mt-5 flex flex-wrap gap-2">
+        {items.map((item) => (
+          <span
+            key={item.name}
+            className="inline-flex items-center gap-2 rounded-2xl border border-white/10 bg-white/[0.03] px-3 py-2 text-sm text-slate-200/90 hover:bg-white/[0.06] transition"
+          >
+            <SkillIcon name={item.icon} className="size-4 text-slate-100/90" />
+            <span className="font-medium">{item.name}</span>
+          </span>
+        ))}
+      </div>
+    </div>
   );
 }
 
+function TextBadgeIcon({ text }: { text: string }) {
+  return (
+    <span
+      aria-hidden
+      className="inline-flex size-5 shrink-0 items-center justify-center rounded-md border border-white/10 bg-white/[0.05] text-[9px] font-semibold leading-none text-slate-100/90"
+    >
+      {text}
+    </span>
+  );
+}
+
+function SkillIcon({ name, className }: { name: SkillIconKey; className?: string }) {
+  switch (name) {
+    case "react":
+      return (
+        <svg viewBox="0 0 24 24" className={className} fill="none">
+          <circle cx="12" cy="12" r="1.6" fill="currentColor" />
+          <ellipse cx="12" cy="12" rx="9" ry="3.8" stroke="currentColor" strokeWidth="1.4" />
+          <ellipse cx="12" cy="12" rx="9" ry="3.8" stroke="currentColor" strokeWidth="1.4" transform="rotate(60 12 12)" />
+          <ellipse cx="12" cy="12" rx="9" ry="3.8" stroke="currentColor" strokeWidth="1.4" transform="rotate(120 12 12)" />
+        </svg>
+      );
+
+    case "next":
+      return (
+        <svg viewBox="0 0 24 24" className={className} fill="none">
+          <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="1.4" />
+          <path d="M9 15.5V8.5l6 7V8.5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
+        </svg>
+      );
+
+    case "tailwind":
+      return (
+        <svg viewBox="0 0 24 24" className={className} fill="currentColor">
+          <path d="M7 10c1-2 2.5-3 4.5-3 3 0 3.5 2 5.5 2 1.5 0 2.5-1 3.5-3-1 2-2.5 3-4.5 3-3 0-3.5-2-5.5-2-1.5 0-2.5 1-3.5 3Z" />
+          <path d="M7 16c1-2 2.5-3 4.5-3 3 0 3.5 2 5.5 2 1.5 0 2.5-1 3.5-3-1 2-2.5 3-4.5 3-3 0-3.5-2-5.5-2-1.5 0-2.5 1-3.5 3Z" />
+        </svg>
+      );
+
+    case "supabase":
+      return (
+        <svg viewBox="0 0 24 24" className={className} fill="currentColor">
+          <path d="M11 3.5c.7-1.2 2.4-.9 2.6.5l1 6.8h5.1c1.3 0 2 1.6 1 2.5l-8.4 7.6c-.9.8-2.4.3-2.6-.9l-.8-5.8H4.1c-1.3 0-2-1.6-1-2.5L11 3.5Z" />
+        </svg>
+      );
+
+    case "stripe":
+      return (
+        <svg viewBox="0 0 24 24" className={className} fill="currentColor">
+          <path d="M9.2 10.2c0-.9.7-1.3 2-1.3 1.7 0 3.7.5 5.4 1.4V7.1C15 6.4 13.1 6 11.4 6 7.9 6 5.6 7.8 5.6 10.7c0 4.5 6.3 3.8 6.3 5.8 0 .8-.7 1.4-2.2 1.4-1.8 0-4.1-.7-5.9-1.7v3.3c1.9.9 3.8 1.3 5.9 1.3 3.6 0 6-1.8 6-4.7 0-4.9-6.4-4-6.4-6.2Z" />
+        </svg>
+      );
+
+    case "github":
+      return (
+        <svg viewBox="0 0 24 24" className={className} fill="currentColor">
+          <path d="M12 3.8a8.2 8.2 0 0 0-2.6 16c.4.1.6-.2.6-.4v-1.5c-2.3.5-2.8-1-2.8-1-.4-1-.9-1.3-.9-1.3-.7-.5.1-.5.1-.5.8.1 1.2.9 1.2.9.7 1.2 1.9.8 2.4.6.1-.5.3-.8.5-1-1.8-.2-3.7-.9-3.7-4a3 3 0 0 1 .8-2.1 2.9 2.9 0 0 1 .1-2.1s.7-.2 2.2.8a7.6 7.6 0 0 1 4 0c1.5-1 2.2-.8 2.2-.8.4 1 .1 1.8.1 2.1.5.6.8 1.3.8 2.1 0 3.1-1.9 3.8-3.7 4 .3.3.6.8.6 1.7v2.5c0 .2.2.5.6.4A8.2 8.2 0 0 0 12 3.8Z" />
+        </svg>
+      );
+
+    case "unity":
+      return (
+        <svg viewBox="0 0 24 24" className={className} fill="none">
+          <path
+            d="M12 4.5 8.2 6.7l-1.9 3.7 1.9 3.7 3.8 2.2 3.8-2.2 1.9-3.7-1.9-3.7L12 4.5Z"
+            stroke="currentColor"
+            strokeWidth="1.4"
+          />
+        </svg>
+      );
+
+    case "expo":
+      return (
+        <svg viewBox="0 0 24 24" className={className} fill="none">
+          <path
+            d="M7.5 17.5c2.5-4 4.2-9.5 4.5-11.5.3 2 2 7.5 4.5 11.5"
+            stroke="currentColor"
+            strokeWidth="1.6"
+            strokeLinecap="round"
+          />
+          <path d="M9 17.5h6" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+        </svg>
+      );
+
+    case "ts":
+      return (
+        <svg viewBox="0 0 24 24" className={className} fill="none">
+          <rect x="5" y="6" width="14" height="12" stroke="currentColor" strokeWidth="1.4" />
+          <path d="M9 11h2v6" stroke="currentColor" strokeWidth="1.4" />
+          <path
+            d="M15.5 11.2c-.3-.4-.8-.6-1.4-.6-.9 0-1.5.4-1.5 1 0 1.4 3.3.8 3.3 2.8 0 1.1-1 1.9-2.6 1.9-1 0-1.9-.4-2.5-1.1"
+            stroke="currentColor"
+            strokeWidth="1.4"
+          />
+        </svg>
+      );
+
+    // 👇 Iconos "de texto": cortos, para NO duplicar el label
+    case "html":
+      return <TextBadgeIcon text="H" />;
+    case "css":
+      return <TextBadgeIcon text="CSS" />;
+    case "js":
+      return <TextBadgeIcon text="JS" />;
+    case "sql":
+      return <TextBadgeIcon text="SQL" />;
+    case "api":
+      return <TextBadgeIcon text="API" />;
+    case "java":
+      return <TextBadgeIcon text="J" />;
+    case "davinci":
+      return <TextBadgeIcon text="DR" />;
+    case "photoshop":
+      return <TextBadgeIcon text="Ps" />;
+
+    default:
+      return null;
+  }
+}
+
+/** ===== Iconos inline (sin librerías) ===== */
 function BriefcaseIcon({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden>
