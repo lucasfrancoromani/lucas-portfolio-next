@@ -52,7 +52,7 @@ export default function PortfolioLucasRomani() {
         "Landing en Next.js + Tailwind. Captura de emails, guía gratuita, GA4, Meta Pixel, TikTok Pixel y pruebas A/B del hero.",
       stack: ["Next.js", "Tailwind", "Vercel", "GA4"],
       tags: ["Web", "Marketing", "Landing"],
-      repo: "https://github.com/lucasfrancoromani/zeroprocrastinacion-web",
+      repo: "https://github.com/lucasfrancoromani/zeroprocrastinacion",
       imageAlt: "Hero de ZeroProcrastinación",
       images: ["/images/captura-zero.png"], // captura temporal
       category: "web",
@@ -64,7 +64,7 @@ export default function PortfolioLucasRomani() {
         "Portfolio oscuro en Next.js con prensa, locución, videos de YouTube y formulario de contacto con API route.",
       stack: ["Next.js", "Tailwind", "API Route"],
       tags: ["Web", "SEO", "Contacto"],
-      repo: "https://github.com/lucasfrancoromani/portfolio-laura",
+      repo: "https://github.com/lucasfrancoromani/laura-portfolio",
       imageAlt: "Mock del portfolio de Laura",
       images: ["/images/captura-laura.png"], // captura temporal
       category: "web",
@@ -84,6 +84,30 @@ export default function PortfolioLucasRomani() {
     github: "https://github.com/lucasfrancoromani",
     linkedin: "https://www.linkedin.com/in/lucasfrancoromani/",
     youtube: "https://www.youtube.com/@cronicasdeunviaje",
+  };
+
+  /** ===== Mobile menu ===== */
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  useEffect(() => {
+    if (!menuOpen) return;
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => void (document.body.style.overflow = prev);
+  }, [menuOpen]);
+
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setMenuOpen(false);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, []);
+
+  const goTo = (href: string) => {
+    setMenuOpen(false);
+    // navegación simple con anchor
+    window.location.href = href;
   };
 
   /** ===== Lightbox ===== */
@@ -134,18 +158,30 @@ export default function PortfolioLucasRomani() {
       {/* NAV */}
       <header className="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-slate-900/40 border-b border-white/10">
         <nav className="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between" aria-label="Principal">
+          {/* Marca */}
           <a
             href="#top"
-            className="font-semibold tracking-wide text-slate-100 focus:outline-none focus:ring-2 focus:ring-sky-400/60 rounded-md"
+            className="min-w-0 font-semibold tracking-wide text-slate-100 focus:outline-none focus:ring-2 focus:ring-sky-400/60 rounded-md"
           >
-            Lucas Franco Romani<span className="text-sky-400"> · Portfolio</span>
+            <span className="block truncate">Lucas Franco Romani</span>
+            <span className="text-sky-400">· Portfolio</span>
           </a>
-          <div className="flex items-center gap-3 text-sm">
-            <a href="/proyectos" className="hover:text-sky-300">Proyectos</a>
-            <a href="#sobre-mi" className="hover:text-sky-300 focus:outline-none focus:ring-2 focus:ring-sky-400/60 rounded-md px-1">
+
+          {/* Desktop links */}
+          <div className="hidden md:flex items-center gap-3 text-sm">
+            <a href="/proyectos" className="hover:text-sky-300">
+              Proyectos
+            </a>
+            <a
+              href="#sobre-mi"
+              className="hover:text-sky-300 focus:outline-none focus:ring-2 focus:ring-sky-400/60 rounded-md px-1"
+            >
               Sobre mí
             </a>
-            <a href="#skills" className="hover:text-sky-300 focus:outline-none focus:ring-2 focus:ring-sky-400/60 rounded-md px-1">
+            <a
+              href="#skills"
+              className="hover:text-sky-300 focus:outline-none focus:ring-2 focus:ring-sky-400/60 rounded-md px-1"
+            >
               Skills
             </a>
             <a
@@ -155,7 +191,78 @@ export default function PortfolioLucasRomani() {
               Contacto
             </a>
           </div>
+
+          {/* Mobile hamburger */}
+          <div className="md:hidden flex items-center gap-2">
+            <button
+              type="button"
+              onClick={() => setMenuOpen(true)}
+              className="inline-flex items-center justify-center rounded-xl border border-white/15 bg-white/[0.03] px-3 py-2 text-sm hover:bg-white/[0.06] focus:outline-none focus:ring-2 focus:ring-sky-400/60"
+              aria-label="Abrir menú"
+              aria-haspopup="dialog"
+              aria-expanded={menuOpen}
+            >
+              <span className="mr-2 text-slate-200/90">Menú</span>
+              <span aria-hidden>☰</span>
+            </button>
+          </div>
         </nav>
+
+        {/* Mobile menu overlay */}
+        {menuOpen && (
+          <div className="fixed inset-0 z-[70] md:hidden" role="dialog" aria-modal="true" aria-label="Menú">
+            <button
+              type="button"
+              className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+              onClick={() => setMenuOpen(false)}
+              aria-label="Cerrar menú"
+            />
+            <div className="absolute right-3 top-3 left-3 rounded-3xl border border-white/10 bg-slate-950/95 p-4 shadow-2xl">
+              <div className="flex items-center justify-between">
+                <div className="text-sm text-slate-200/90">Navegación</div>
+                <button
+                  type="button"
+                  onClick={() => setMenuOpen(false)}
+                  className="inline-flex items-center rounded-xl border border-white/15 px-3 py-1.5 text-sm hover:bg-white/[0.06] focus:outline-none focus:ring-2 focus:ring-sky-400/60"
+                  aria-label="Cerrar"
+                >
+                  ✕
+                </button>
+              </div>
+
+              <div className="mt-3 grid gap-2 text-base">
+                <button
+                  type="button"
+                  onClick={() => goTo("/proyectos")}
+                  className="w-full text-left rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-3 hover:bg-white/[0.06]"
+                >
+                  Proyectos
+                </button>
+                <button
+                  type="button"
+                  onClick={() => goTo("/#sobre-mi")}
+                  className="w-full text-left rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-3 hover:bg-white/[0.06]"
+                >
+                  Sobre mí
+                </button>
+                <button
+                  type="button"
+                  onClick={() => goTo("/#skills")}
+                  className="w-full text-left rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-3 hover:bg-white/[0.06]"
+                >
+                  Skills
+                </button>
+                <button
+                  type="button"
+                  onClick={() => goTo("/#contacto")}
+                  className="w-full text-left rounded-2xl border border-sky-500/30 bg-sky-500/10 px-4 py-3 hover:bg-sky-500/15"
+                >
+                  Contacto
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
       </header>
 
       {/* HERO */}
@@ -190,13 +297,19 @@ export default function PortfolioLucasRomani() {
             </p>
 
             <div className="mt-6 flex flex-wrap gap-3">
-              <ButtonLink href="/proyectos" variant="primary">Ver proyectos</ButtonLink>
-              <ButtonLink href={links.github} external>GitHub</ButtonLink>
+              <ButtonLink href="/proyectos" variant="primary">
+                Ver proyectos
+              </ButtonLink>
+              <ButtonLink href={links.github} external>
+                GitHub
+              </ButtonLink>
             </div>
 
             <ul className="mt-6 flex flex-wrap gap-2 text-xs text-slate-300/80">
               {["Next.js", "React Native", "Supabase", "Stripe Connect", "Tailwind"].map((b) => (
-                <li key={b} className="rounded-full border border-white/10 px-3 py-1">{b}</li>
+                <li key={b} className="rounded-full border border-white/10 px-3 py-1">
+                  {b}
+                </li>
               ))}
             </ul>
           </div>
@@ -407,19 +520,25 @@ export default function PortfolioLucasRomani() {
                       Actual
                     </span>
                   </div>
-                  <p className="mt-1 text-sm text-slate-300/90">
-                    Desarrollo y soporte de soluciones internas y proyectos web.
-                  </p>
+                  <p className="mt-1 text-sm text-slate-300/90">Desarrollo y soporte de soluciones internas y proyectos web.</p>
                 </div>
               </div>
             </div>
 
             {/* LISTA */}
             <ul className="space-y-3 text-slate-300/90">
-              <li className="flex items-start gap-3"><Dot /> UX clara y flujos coherentes.</li>
-              <li className="flex items-start gap-3"><Dot /> Buenas prácticas: Git, RLS, manejo de errores.</li>
-              <li className="flex items-start gap-3"><Dot /> MVPs con Stripe Connect y Supabase.</li>
-              <li className="flex items-start gap-3"><Dot /> Aprendizaje continuo y enfoque práctico.</li>
+              <li className="flex items-start gap-3">
+                <Dot /> UX clara y flujos coherentes.
+              </li>
+              <li className="flex items-start gap-3">
+                <Dot /> Buenas prácticas: Git, RLS, manejo de errores.
+              </li>
+              <li className="flex items-start gap-3">
+                <Dot /> MVPs con Stripe Connect y Supabase.
+              </li>
+              <li className="flex items-start gap-3">
+                <Dot /> Aprendizaje continuo y enfoque práctico.
+              </li>
             </ul>
           </div>
         </div>
@@ -481,10 +600,18 @@ export default function PortfolioLucasRomani() {
             ¿Tenés una idea o un proyecto? Escribime y vemos cómo puedo ayudarte con un MVP rápido y un plan claro.
           </p>
           <div className="mt-5 flex flex-wrap gap-3">
-            <ButtonLink href={links.email} variant="primary">Enviar email</ButtonLink>
-            <ButtonLink href={links.github} external>GitHub</ButtonLink>
-            <ButtonLink href={links.linkedin} external>LinkedIn</ButtonLink>
-            <ButtonLink href={links.youtube} external>YouTube</ButtonLink>
+            <ButtonLink href={links.email} variant="primary">
+              Enviar email
+            </ButtonLink>
+            <ButtonLink href={links.github} external>
+              GitHub
+            </ButtonLink>
+            <ButtonLink href={links.linkedin} external>
+              LinkedIn
+            </ButtonLink>
+            <ButtonLink href={links.youtube} external>
+              YouTube
+            </ButtonLink>
           </div>
         </div>
         <footer className="mt-10 py-8 text-center text-slate-400 text-sm border-t border-white/10">
@@ -701,7 +828,6 @@ function SkillIcon({ name, className }: { name: SkillIconKey; className?: string
         </svg>
       );
 
-    // 👇 Iconos "de texto": cortos, para NO duplicar el label
     case "html":
       return <TextBadgeIcon text="H" />;
     case "css":
