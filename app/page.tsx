@@ -39,7 +39,7 @@ export default function PortfolioLucasRomani() {
       blurb:
         "Marketplace móvil para servicios de bienestar. Autenticación, reservas, reprogramación, panel profesional y Stripe Connect.",
       stack: ["React Native", "Expo", "Supabase", "Stripe"],
-      tags: ["Mobile", "Full-Stack"],
+      tags: ["Mobile", "Product Design"],
       repo: "https://github.com/lucasfrancoromani/bienestar-mvp",
       imageAlt: "Pantallas de la app Bienestar",
       images: ["/images/captura-bienestar.png"], // captura temporal
@@ -269,7 +269,7 @@ export default function PortfolioLucasRomani() {
       <section id="top" className="mx-auto max-w-6xl px-4 py-16 md:py-24">
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <div>
-            <p className="text-sm uppercase tracking-[0.2em] text-sky-300/90">Desarrollador & Creador Digital</p>
+            <p className="text-sm uppercase tracking-[0.2em] text-sky-300/90">DESARROLLADOR & CREADOR DIGITAL</p>
             <h1 className="mt-3 text-4xl md:text-6xl font-extrabold leading-tight">
               Construyo experiencias{" "}
               <span className="bg-gradient-to-r from-sky-400 to-teal-300 bg-clip-text text-transparent">
@@ -277,23 +277,19 @@ export default function PortfolioLucasRomani() {
               </span>
             </h1>
 
-            {/* MIDAS badge (temporal) */}
+            {/* STATUS badge */}
             <div className="mt-4 flex flex-wrap items-center gap-2">
-              <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-3 py-1 text-xs text-slate-200/90">
-                <Image
-                  src="/images/logo-header.svg"
-                  alt="MIDAS Consultores"
-                  width={50}
-                  height={50}
-                  className="object-contain"
-                />
-                MIDAS CONSULTORES
-                <span className="text-slate-300/70">· actual</span>
+              <span className="inline-flex items-center gap-2 rounded-full border border-teal-500/30 bg-teal-500/10 px-3 py-1 text-xs text-teal-200">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-teal-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-teal-500"></span>
+                </span>
+                Disponible para proyectos
               </span>
             </div>
 
             <p className="mt-5 text-slate-300/90 text-lg">
-              Web y mobile con React/Next.js y React Native. Me enfoco en MVPs funcionales, rendimiento y una UX simple.
+              Diseño y desarrollo interfaces modernas con Next.js y React Native. Me enfoco en la experiencia de usuario, el rendimiento y la atención al detalle visual.
             </p>
 
             <div className="mt-6 flex flex-wrap gap-3">
@@ -306,7 +302,7 @@ export default function PortfolioLucasRomani() {
             </div>
 
             <ul className="mt-6 flex flex-wrap gap-2 text-xs text-slate-300/80">
-              {["Next.js", "React Native", "Supabase", "Stripe Connect", "Tailwind"].map((b) => (
+              {["Next.js", "UX/UI", "React Native", "Tailwind CSS", "Diseño de Producto"].map((b) => (
                 <li key={b} className="rounded-full border border-white/10 px-3 py-1">
                   {b}
                 </li>
@@ -331,24 +327,24 @@ export default function PortfolioLucasRomani() {
                   </div>
                   <div>
                     <div className="text-lg font-semibold">Lucas Franco Romani</div>
-                    <div className="text-sm text-slate-300/90">Full-Stack · Mobile · UI</div>
+                    <div className="text-sm text-slate-300/90">Web & SEO Specialist · Digital Designer</div>
                     <div className="mt-2 flex flex-wrap gap-2">
                       <span className="inline-flex items-center gap-2 rounded-full border border-white/10 px-3 py-1 text-xs text-slate-200/90">
                         <BriefcaseIcon className="size-4 opacity-90" />
-                        MIDAS CONSULTORES
+                        Freelance / Proyectos
                       </span>
                       <span className="inline-flex items-center gap-2 rounded-full border border-white/10 px-3 py-1 text-xs text-slate-200/90">
                         <LocationIcon className="size-4 opacity-90" />
-                        Argentina
+                        España
                       </span>
                     </div>
                   </div>
                 </div>
 
                 <div className="mt-6 grid grid-cols-3 gap-3">
-                  <GradientCard title="React Native" subtitle="Expo" />
-                  <GradientCard title="Supabase" subtitle="Auth · RLS" />
-                  <GradientCard title="Stripe" subtitle="Connect" />
+                  <GradientCard title="UX/UI" subtitle="Diseño" />
+                  <GradientCard title="Mobile" subtitle="Expo / React" />
+                  <GradientCard title="Frontend" subtitle="Next.js" />
                 </div>
               </div>
             </div>
@@ -472,7 +468,7 @@ export default function PortfolioLucasRomani() {
             <div className="relative w-full max-w-[640px] aspect-[3.5/5] overflow-hidden rounded-2xl ring-1 ring-white/10">
               <Image
                 src="/images/lucas-about.jpg"
-                alt="Lucas Romani en Venecia"
+                alt="Lucas Romani"
                 fill
                 className="object-cover object-center"
                 sizes="1024px"
@@ -484,14 +480,13 @@ export default function PortfolioLucasRomani() {
           <div className="space-y-6">
             <div className="rounded-3xl border border-white/10 bg-white/[0.02] p-6 text-slate-300/90 leading-relaxed">
               <p>
-                Soy desarrollador argentino viviendo en Italia. Me enfoco en crear productos digitales claros,
+                Soy desarrollador argentino viviendo en España. Me enfoco en crear productos digitales claros,
                 funcionales y bien diseñados, priorizando la experiencia de usuario y el rendimiento.
               </p>
 
               <p className="mt-4">
-                Trabajo principalmente con <strong>React, Next.js y React Native</strong>, desarrollando MVPs que validan
-                ideas rápido y escalan de forma ordenada. Me siento cómodo moviéndome entre frontend, lógica de negocio
-                y base de datos.
+                Trabajo principalmente con <strong>React, Next.js y React Native</strong>, desarrollando MVPs que
+                validan ideas rápido y escalan de forma ordenada. Me siento cómodo moviéndome entre frontend, lógica de negocio y base de datos.
               </p>
 
               <p className="mt-4">
@@ -500,44 +495,44 @@ export default function PortfolioLucasRomani() {
               </p>
             </div>
 
-            {/* EXPERIENCIA MIDAS (temporal) */}
+            {/* EXPERIENCIA (Actualizada: Frontend & UX/UI) */}
             <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-5">
               <div className="flex items-start gap-4">
-                <div className="inline-flex items-center rounded-xl bg-white/90 px-4 py-2">
-                  <Image
-                    src="/images/logo-header.png"
-                    alt="MIDAS Consultores"
-                    width={120}
-                    height={48}
-                    className="object-contain"
-                  />
+                <div className="inline-flex items-center justify-center rounded-xl bg-gradient-to-br from-sky-500/20 to-teal-500/20 border border-white/10 w-12 h-12 shrink-0 text-sky-300">
+                  {/* Icono de Diseño/Código */}
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+                  </svg>
                 </div>
 
                 <div>
                   <div className="flex items-center gap-2">
-                    <h4 className="font-semibold text-slate-100">MIDAS CONSULTORES</h4>
+                    <h4 className="font-semibold text-slate-100">Digital Designer / Web & SEO Specialist</h4>
                     <span className="text-xs border border-white/10 rounded-full px-2 py-0.5 text-slate-300/80">
                       Actual
                     </span>
                   </div>
-                  <p className="mt-1 text-sm text-slate-300/90">Desarrollo y soporte de soluciones internas y proyectos web.</p>
+                  <p className="text-xs text-sky-400 mt-0.5 mb-1 font-medium">Proyectos Propios / Freelance</p>
+                  <p className="text-sm text-slate-300/90">
+                    Diseño de interfaces, desarrollo de MVPs y optimización de experiencia de usuario en web y mobile.
+                  </p>
                 </div>
               </div>
             </div>
 
-            {/* LISTA */}
+            {/* LISTA DE ENFOQUE */}
             <ul className="space-y-3 text-slate-300/90">
               <li className="flex items-start gap-3">
-                <Dot /> UX clara y flujos coherentes.
+                <Dot /> Diseño centrado en el usuario y flujos intuitivos.
               </li>
               <li className="flex items-start gap-3">
-                <Dot /> Buenas prácticas: Git, RLS, manejo de errores.
+                <Dot /> Código limpio y componentes reutilizables.
               </li>
               <li className="flex items-start gap-3">
-                <Dot /> MVPs con Stripe Connect y Supabase.
+                <Dot /> MVPs funcionales listos para escalar.
               </li>
               <li className="flex items-start gap-3">
-                <Dot /> Aprendizaje continuo y enfoque práctico.
+                <Dot /> Combinación de estética y rendimiento técnico.
               </li>
             </ul>
           </div>
@@ -550,20 +545,18 @@ export default function PortfolioLucasRomani() {
 
         <div className="mt-8 grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           <SkillChipGroup
-            title="Frontend"
+            title="Frontend & UI"
             items={[
-              { name: "HTML", icon: "html" },
-              { name: "CSS", icon: "css" },
-              { name: "JavaScript", icon: "js" },
-              { name: "React", icon: "react" },
               { name: "Next.js", icon: "next" },
+              { name: "React", icon: "react" },
               { name: "Tailwind CSS", icon: "tailwind" },
               { name: "TypeScript", icon: "ts" },
+              { name: "HTML/CSS", icon: "html" },
             ]}
           />
 
           <SkillChipGroup
-            title="Mobile"
+            title="Mobile & App"
             items={[
               { name: "React Native", icon: "react" },
               { name: "Expo", icon: "expo" },
@@ -571,22 +564,22 @@ export default function PortfolioLucasRomani() {
           />
 
           <SkillChipGroup
-            title="Backend / Data"
+            title="Creativo & Tools"
             items={[
-              { name: "SQL", icon: "sql" },
-              { name: "APIs REST", icon: "api" },
-              { name: "Supabase", icon: "supabase" },
-              { name: "Java", icon: "java" },
+              { name: "Git / GitHub", icon: "github" },
+              { name: "DaVinci Resolve", icon: "davinci" },
+              { name: "Photoshop", icon: "photoshop" },
+              { name: "Unity (C#)", icon: "unity" },
             ]}
           />
 
-          <SkillChipGroup
-            title="Creativo / Tools"
+           <SkillChipGroup
+            title="Servicios / Backend"
             items={[
-              { name: "Git / GitHub", icon: "github" },
-              { name: "Unity (C#)", icon: "unity" },
-              { name: "DaVinci Resolve", icon: "davinci" },
-              { name: "Adobe Photoshop", icon: "photoshop" },
+              { name: "Supabase", icon: "supabase" },
+              { name: "Stripe", icon: "stripe" },
+              { name: "SQL", icon: "sql" },
+              { name: "APIs REST", icon: "api" },
             ]}
           />
         </div>
@@ -594,10 +587,10 @@ export default function PortfolioLucasRomani() {
 
       {/* CONTACTO */}
       <section id="contacto" className="scroll-mt-24 mx-auto max-w-6xl px-4 py-12 md:py-16">
-        <SectionTitle title="Contacto" subtitle="Agendemos una llamada" />
+        <SectionTitle title="Contacto" subtitle="Hablemos de tu proyecto" />
         <div className="mt-6 rounded-3xl border border-white/10 bg-gradient-to-br from-sky-500/10 to-teal-500/10 p-6 md:p-8">
           <p className="text-slate-200 text-lg">
-            ¿Tenés una idea o un proyecto? Escribime y vemos cómo puedo ayudarte con un MVP rápido y un plan claro.
+            ¿Buscas mejorar tu presencia digital o validar una idea? Escribime y vemos cómo combinar diseño y código para crear algo único.
           </p>
           <div className="mt-5 flex flex-wrap gap-3">
             <ButtonLink href={links.email} variant="primary">
@@ -707,7 +700,8 @@ type SkillIconKey =
   | "api"
   | "java"
   | "davinci"
-  | "photoshop";
+  | "photoshop"
+  | "google";
 
 type SkillChip = { name: string; icon: SkillIconKey };
 
@@ -825,6 +819,14 @@ function SkillIcon({ name, className }: { name: SkillIconKey; className?: string
             stroke="currentColor"
             strokeWidth="1.4"
           />
+        </svg>
+      );
+    
+    // Icono genérico para Google/Analytics
+    case "google":
+      return (
+        <svg viewBox="0 0 24 24" className={className} fill="currentColor">
+            <path d="M12.24 10.285V14.4h6.806c-.275 1.765-2.056 5.174-6.806 5.174-4.095 0-7.439-3.389-7.439-7.574s3.345-7.574 7.439-7.574c2.33 0 3.891.989 4.785 1.849l3.254-3.138C18.189 1.186 15.479 0 12.24 0c-6.635 0-12 5.365-12 12s5.365 12 12 12c6.926 0 11.52-4.869 11.52-11.726 0-.788-.085-1.39-.189-1.989H12.24z"/>
         </svg>
       );
 

@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 
   title: "Lucas Franco Romani - Portfolio",
   description:
-    "Desarrollador Full-Stack & Mobile. React, React Native, Supabase y Stripe. MVPs claros, performance y buen UX.",
+    "Desarrollador & Creador Digital. React, React Native, Supabase y Stripe. MVPs claros, performance y buen UX.",
 
   alternates: {
     canonical: "https://www.lucasromani.com",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Lucas Franco Romani - Portfolio",
     description:
-      "Full-Stack & Mobile (React, React Native, Supabase, Stripe). Proyectos, MVPs y contacto.",
+      "Desarrollador & Creador Digital (React, React Native, Supabase, Stripe). Proyectos, MVPs y contacto.",
     url: "https://www.lucasromani.com",
     siteName: "Portfolio Lucas Romani",
     images: [
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Lucas Franco Romani - Portfolio",
     description:
-      "Full-Stack & Mobile. React, React Native, Supabase, Stripe. MVPs rápidos y claros.",
+      "Desarrollador & Creador Digital. React, React Native, Supabase, Stripe. MVPs rápidos y claros.",
     images: [
       "https://www.lucasromani.com/og/lucas-romani-og.png",
     ],
