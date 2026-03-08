@@ -13,9 +13,9 @@
 }
 
 body {
-  background: radial-gradient(1200px 800px at 10% -10%, rgba(56,189,248,0.08), transparent 40%),
-              radial-gradient(1200px 800px at 110% 10%, rgba(45,212,191,0.06), transparent 40%),
-              var(--background);
+  background: radial-gradient(1200px 800px at 10% -10%, rgba(56, 189, 248, 0.08), transparent 40%),
+    radial-gradient(1200px 800px at 110% 10%, rgba(45, 212, 191, 0.06), transparent 40%),
+    var(--background);
   color: var(--foreground);
   font-family: var(--font-sans), system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
 }

@@ -43,6 +43,7 @@ const projects: Project[] = [
     cover: "/images/Captura_Consulado1.png",
     gallery: ["/images/Captura_Consulado1.png", "/images/Captura_Consulado2.png"],
     category: "web",
+    demo: "https://lucasfrancoromani.github.io/consulado-boca-roma/",
   },
   {
     slug: "bienestar-app-mvp",
@@ -75,6 +76,7 @@ const projects: Project[] = [
     cover: "/images/captura-zero.png",
     gallery: ["/images/captura-zero.png"],
     category: "web",
+    demo: "https://www.zeroprocrastinacion.com",
   },
   {
     slug: "portfolio-laura",

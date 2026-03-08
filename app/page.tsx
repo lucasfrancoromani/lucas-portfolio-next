@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useEffect, useMemo, useRef, useState } from "react";
 
-/** ===== Tipos ===== */
+/** Tipos  */
 type Project = {
   title: string;
   period: string;
@@ -17,9 +17,9 @@ type Project = {
   category: "web" | "mobile";
 };
 
-/** ===== Página ===== */
+/* Página */
 export default function PortfolioLucasRomani() {
-  /** Proyectos (web + mobile) */
+  /** Proyectos  */
   const allProjects: Readonly<Project[]> = [
     {
       title: "Consulado Boca Juniors Roma",
@@ -32,6 +32,7 @@ export default function PortfolioLucasRomani() {
       imageAlt: "Capturas del sitio Consulado Boca Juniors Roma",
       images: ["/images/Captura_Consulado1.png", "/images/Captura_Consulado2.png"],
       category: "web",
+      demo: "https://lucasfrancoromani.github.io/consulado-boca-roma/",
     },
     {
       title: "Bienestar App (MVP)",
@@ -42,7 +43,7 @@ export default function PortfolioLucasRomani() {
       tags: ["Mobile", "Product Design"],
       repo: "https://github.com/lucasfrancoromani/bienestar-mvp",
       imageAlt: "Pantallas de la app Bienestar",
-      images: ["/images/captura-bienestar.png"], // captura temporal
+      images: ["/images/captura-bienestar.png"],
       category: "mobile",
     },
     {
@@ -54,8 +55,9 @@ export default function PortfolioLucasRomani() {
       tags: ["Web", "Marketing", "Landing"],
       repo: "https://github.com/lucasfrancoromani/zeroprocrastinacion",
       imageAlt: "Hero de ZeroProcrastinación",
-      images: ["/images/captura-zero.png"], // captura temporal
+      images: ["/images/captura-zero.png"],
       category: "web",
+      demo: "https://www.zeroprocrastinacion.com",
     },
     {
       title: "Portfolio Laura – Periodista & Locutora",
@@ -66,12 +68,12 @@ export default function PortfolioLucasRomani() {
       tags: ["Web", "SEO", "Contacto"],
       repo: "https://github.com/lucasfrancoromani/laura-portfolio",
       imageAlt: "Mock del portfolio de Laura",
-      images: ["/images/captura-laura.png"], // captura temporal
+      images: ["/images/captura-laura.png"],
       category: "web",
     },
   ];
 
-  /** Filtro (Todos/Web/Mobile) */
+  /** Filtro */
   const [filter, setFilter] = useState<"all" | "web" | "mobile">("all");
   const projects = useMemo(() => {
     if (filter === "all") return allProjects;
@@ -86,7 +88,7 @@ export default function PortfolioLucasRomani() {
     youtube: "https://www.youtube.com/@cronicasdeunviaje",
   };
 
-  /** ===== Mobile menu ===== */
+  /** Menu mobile */
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
@@ -106,11 +108,10 @@ export default function PortfolioLucasRomani() {
 
   const goTo = (href: string) => {
     setMenuOpen(false);
-    // navegación simple con anchor
     window.location.href = href;
   };
 
-  /** ===== Lightbox ===== */
+  /** Lightbox*/
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxImages, setLightboxImages] = useState<string[]>([]);
   const [lightboxAlt, setLightboxAlt] = useState<string>("");
@@ -366,11 +367,10 @@ export default function PortfolioLucasRomani() {
             <button
               key={btn.k}
               onClick={() => setFilter(btn.k as "all" | "web" | "mobile")}
-              className={`rounded-full border px-3 py-1.5 text-sm ${
-                filter === btn.k
-                  ? "bg-sky-500/90 text-slate-950 border-sky-500/50"
-                  : "border-white/15 hover:border-white/30"
-              }`}
+              className={`rounded-full border px-3 py-1.5 text-sm ${filter === btn.k
+                ? "bg-sky-500/90 text-slate-950 border-sky-500/50"
+                : "border-white/15 hover:border-white/30"
+                }`}
             >
               {btn.label}
             </button>
@@ -501,7 +501,7 @@ export default function PortfolioLucasRomani() {
                 <div className="inline-flex items-center justify-center rounded-xl bg-gradient-to-br from-sky-500/20 to-teal-500/20 border border-white/10 w-12 h-12 shrink-0 text-sky-300">
                   {/* Icono de Diseño/Código */}
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
                   </svg>
                 </div>
 
@@ -573,7 +573,7 @@ export default function PortfolioLucasRomani() {
             ]}
           />
 
-           <SkillChipGroup
+          <SkillChipGroup
             title="Servicios / Backend"
             items={[
               { name: "Supabase", icon: "supabase" },
@@ -627,7 +627,7 @@ export default function PortfolioLucasRomani() {
   );
 }
 
-/** ===== UI Reutilizable ===== */
+/** UI Reutilizable */
 type ButtonLinkProps = {
   href: string;
   children: React.ReactNode;
@@ -643,8 +643,8 @@ function ButtonLink({ href, children, variant = "ghost", size = "md", external =
     variant === "primary"
       ? "bg-sky-500/90 hover:bg-sky-400 text-slate-950 font-medium shadow-lg shadow-sky-500/20"
       : variant === "primary-strong"
-      ? "bg-sky-500 hover:bg-sky-400 text-slate-900 font-semibold"
-      : "border border-white/15 hover:border-white/30";
+        ? "bg-sky-500 hover:bg-sky-400 text-slate-900 font-semibold"
+        : "border border-white/15 hover:border-white/30";
   const rel = external ? "noopener noreferrer" : undefined;
   const target = external ? "_blank" : undefined;
 
@@ -682,7 +682,7 @@ function Dot() {
   return <span aria-hidden className="mt-2 inline-block size-2 rounded-full bg-sky-400/80 shadow shadow-sky-500/30" />;
 }
 
-/** ===== Iconos Skills ===== */
+/**  Iconos Skills  */
 type SkillIconKey =
   | "react"
   | "next"
@@ -821,12 +821,12 @@ function SkillIcon({ name, className }: { name: SkillIconKey; className?: string
           />
         </svg>
       );
-    
+
     // Icono genérico para Google/Analytics
     case "google":
       return (
         <svg viewBox="0 0 24 24" className={className} fill="currentColor">
-            <path d="M12.24 10.285V14.4h6.806c-.275 1.765-2.056 5.174-6.806 5.174-4.095 0-7.439-3.389-7.439-7.574s3.345-7.574 7.439-7.574c2.33 0 3.891.989 4.785 1.849l3.254-3.138C18.189 1.186 15.479 0 12.24 0c-6.635 0-12 5.365-12 12s5.365 12 12 12c6.926 0 11.52-4.869 11.52-11.726 0-.788-.085-1.39-.189-1.989H12.24z"/>
+          <path d="M12.24 10.285V14.4h6.806c-.275 1.765-2.056 5.174-6.806 5.174-4.095 0-7.439-3.389-7.439-7.574s3.345-7.574 7.439-7.574c2.33 0 3.891.989 4.785 1.849l3.254-3.138C18.189 1.186 15.479 0 12.24 0c-6.635 0-12 5.365-12 12s5.365 12 12 12c6.926 0 11.52-4.869 11.52-11.726 0-.788-.085-1.39-.189-1.989H12.24z" />
         </svg>
       );
 
@@ -852,7 +852,7 @@ function SkillIcon({ name, className }: { name: SkillIconKey; className?: string
   }
 }
 
-/** ===== Iconos inline (sin librerías) ===== */
+/** Iconos inline (sin librerías)*/
 function BriefcaseIcon({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden>
@@ -887,7 +887,7 @@ function LocationIcon({ className }: { className?: string }) {
   );
 }
 
-/** ===== Lightbox ===== */
+/** Lightbox  */
 /* eslint-disable @next/next/no-img-element */
 type LightboxProps = {
   open: boolean;
@@ -977,9 +977,8 @@ function Lightbox({ open, images, alt, index, onClose, onPrev, onNext, setIndex 
                 <button
                   key={src + i}
                   onClick={() => setIndex(i)}
-                  className={`relative h-16 w-28 flex-shrink-0 overflow-hidden rounded-md border ${
-                    active ? "border-sky-400" : "border-white/10"
-                  }`}
+                  className={`relative h-16 w-28 flex-shrink-0 overflow-hidden rounded-md border ${active ? "border-sky-400" : "border-white/10"
+                    }`}
                   aria-label={`Ver imagen ${i + 1}`}
                 >
                   <img src={src} alt="" className="object-cover w-full h-full" />
